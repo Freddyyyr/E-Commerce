@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/styling/app_colors.dart';
+import 'package:e_commerce/features/account_screen/account_screen.dart';
 import 'package:e_commerce/features/cart_screen/cart_screen.dart';
 import 'package:e_commerce/features/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,15 +15,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
 
-  List<Widget> screens = [
-    HomeScreen(),
-    CartScreen(),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.yellow,
-    ),
-  ];
+  List<Widget> screens = [HomeScreen(), CartScreen(), AccountScreen()];
 
   @override
   Widget build(BuildContext context) {
