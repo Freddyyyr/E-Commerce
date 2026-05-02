@@ -1,9 +1,11 @@
+import 'package:e_commerce/core/routing/app_routes.dart';
 import 'package:e_commerce/core/styling/app_assets.dart';
 import 'package:e_commerce/core/styling/app_styles.dart';
 import 'package:e_commerce/core/widgets/spacing_widgets.dart';
-import 'package:e_commerce/features/account_screen/widgets/account_tile_widget.dart';
+import 'package:e_commerce/features/account/widgets/account_tile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -15,7 +17,7 @@ class AccountScreen extends StatelessWidget {
         title: const Text("Account"),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: Container(),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: Colors.white,
       body: Column(
@@ -43,7 +45,9 @@ class AccountScreen extends StatelessWidget {
           AccountTileWidget(
             title: "Address book",
             iconPath: AppAssets.address,
-            onTap: () {},
+            onTap: () {
+              context.pushNamed(AppRoutes.addressScreen);
+            },
           ),
           const HeightSpace(16),
           AccountTileWidget(

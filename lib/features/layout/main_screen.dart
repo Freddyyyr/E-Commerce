@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/styling/app_colors.dart';
-import 'package:e_commerce/features/account_screen/account_screen.dart';
-import 'package:e_commerce/features/cart_screen/cart_screen.dart';
-import 'package:e_commerce/features/home_screen/home_screen.dart';
+import 'package:e_commerce/features/account/account_screen.dart';
+import 'package:e_commerce/features/cart/cart_screen.dart';
+import 'package:e_commerce/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

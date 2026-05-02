@@ -3,4 +3,5 @@ class AppRoutes {
   static const String registerScreen = '/registerScreen';
   static const String mainScreen = '/mainScreen';
   static const String productScreen = '/productScreen';
+  static const String addressScreen = '/addressScreen';
 }

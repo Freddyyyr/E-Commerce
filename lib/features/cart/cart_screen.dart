@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/widgets/primay_button_widget.dart';
 import 'package:e_commerce/core/widgets/spacing_widgets.dart';
-import 'package:e_commerce/features/cart_screen/widgets/cart_item_widget.dart';
-import 'package:e_commerce/features/cart_screen/widgets/title_price_widget.dart';
+import 'package:e_commerce/features/cart/widgets/cart_item_widget.dart';
+import 'package:e_commerce/features/cart/widgets/title_price_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
         title: const Text("Cart"),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: Container(),
+        automaticallyImplyLeading: false, // leading: Container(),
       ),
       backgroundColor: Colors.white,
       body: Padding(

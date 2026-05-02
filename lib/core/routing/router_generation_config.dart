@@ -1,8 +1,9 @@
 import 'package:e_commerce/core/routing/app_routes.dart';
+import 'package:e_commerce/features/address/address_screen.dart';
 import 'package:e_commerce/features/auth/login_screen.dart';
 import 'package:e_commerce/features/auth/register_screen.dart';
-import 'package:e_commerce/features/main_screen/main_screen.dart';
-import 'package:e_commerce/features/product_screen/product_screen.dart';
+import 'package:e_commerce/features/layout/main_screen.dart';
+import 'package:e_commerce/features/product/product_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class RouterGenerationConfig {
@@ -28,6 +29,11 @@ class RouterGenerationConfig {
         name: AppRoutes.productScreen,
         path: AppRoutes.productScreen,
         builder: (context, state) => const ProductScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.addressScreen,
+        path: AppRoutes.addressScreen,
+        builder: (context, state) => const AddressScreen(),
       ),
     ],
   );
