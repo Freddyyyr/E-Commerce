@@ -1,9 +1,16 @@
+import 'dart:developer';
+
+import 'package:animated_snack_bar/animated_snack_bar.dart';
+import 'package:dartz/dartz.dart' as either;
 import 'package:e_commerce/core/routing/app_routes.dart';
 import 'package:e_commerce/core/styling/app_colors.dart';
 import 'package:e_commerce/core/styling/app_styles.dart';
+import 'package:e_commerce/core/utils/animated_snack_dialog.dart';
 import 'package:e_commerce/core/widgets/custom_text_field.dart';
 import 'package:e_commerce/core/widgets/primay_button_widget.dart';
 import 'package:e_commerce/core/widgets/spacing_widgets.dart';
+import 'package:e_commerce/features/auth/models/login_response_model.dart';
+import 'package:e_commerce/features/auth/repo/auth_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -23,6 +30,29 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
+    AuthRepo().login("emilys", "emilyspass").then((
+      either.Either<String, LoginResponseModel> res,
+    ) {
+      res.fold(
+        (error) {
+          showAnimateSnackDialog(
+            context,
+            message: error,
+            type: AnimatedSnackBarType.error,
+          );
+          log(error);
+        },
+        (right) {
+          showAnimateSnackDialog(
+            context,
+            message: "Login Succesfully",
+            type: AnimatedSnackBarType.success,
+          );
+          log(right.toJson().toString());
+        },
+      );
+      setState(() {});
+    });
     username = TextEditingController();
     password = TextEditingController();
   }

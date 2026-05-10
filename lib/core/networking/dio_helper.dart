@@ -37,7 +37,7 @@ class DioHelper {
       Response response = await dio!.post(endPoint, data: data);
       return response;
     } catch (e) {
-      log(e.toString());
+      rethrow;
     }
   }
 }
