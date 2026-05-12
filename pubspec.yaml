@@ -43,6 +43,7 @@ dependencies:
   lottie: ^3.3.3
   dartz: ^0.10.1
   animated_snack_bar: ^0.4.0
+  get_it: ^9.2.1
 
 dev_dependencies:
   flutter_test:

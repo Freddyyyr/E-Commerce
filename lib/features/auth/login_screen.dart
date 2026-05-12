@@ -6,6 +6,7 @@ import 'package:e_commerce/core/routing/app_routes.dart';
 import 'package:e_commerce/core/styling/app_colors.dart';
 import 'package:e_commerce/core/styling/app_styles.dart';
 import 'package:e_commerce/core/utils/animated_snack_dialog.dart';
+import 'package:e_commerce/core/utils/service_locator.dart';
 import 'package:e_commerce/core/widgets/custom_text_field.dart';
 import 'package:e_commerce/core/widgets/primay_button_widget.dart';
 import 'package:e_commerce/core/widgets/spacing_widgets.dart';
@@ -30,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    AuthRepo().login("emilys", "emilyspass").then((
+    sl<AuthRepo>().login("emilys", "emilyspass").then((
       either.Either<String, LoginResponseModel> res,
     ) {
       res.fold(
