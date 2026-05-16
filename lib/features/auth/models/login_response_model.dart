@@ -4,7 +4,7 @@ class LoginResponseModel {
   LoginResponseModel({this.token});
 
   LoginResponseModel.fromJSON(Map<String, dynamic> json) {
-    token = json["token"];
+    token = json["accessToken"];
   }
 
   Map<String, dynamic> toJson() {

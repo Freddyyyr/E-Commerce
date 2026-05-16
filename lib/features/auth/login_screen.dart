@@ -2,6 +2,8 @@ import 'package:e_commerce/core/routing/app_routes.dart';
 import 'package:e_commerce/core/styling/app_colors.dart';
 import 'package:e_commerce/core/styling/app_styles.dart';
 import 'package:e_commerce/core/utils/animated_snack_dialog.dart';
+import 'package:e_commerce/core/utils/service_locator.dart';
+import 'package:e_commerce/core/utils/storage_helper.dart';
 import 'package:e_commerce/core/widgets/custom_text_field.dart';
 import 'package:e_commerce/core/widgets/loading_widget.dart';
 import 'package:e_commerce/core/widgets/primay_button_widget.dart';
@@ -30,6 +32,12 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     username = TextEditingController();
     password = TextEditingController();
+
+    sl<StorageHelper>().getToken().then((value) {
+      if (value != null && value.isNotEmpty) {
+        context.pushReplacementNamed(AppRoutes.mainScreen);
+      }
+    });
   }
 
   @override
@@ -51,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 type: .success,
                 message: state.message,
               );
+              context.pushReplacementNamed(AppRoutes.mainScreen);
             }
           },
           builder: (context, state) {
@@ -135,9 +144,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                     password: password.text,
                                   );
                                 }
-                                //    if (formKey.currentState!.validate()) {
-                                // GoRouter.of(context).pushNamed(AppRoutes.verifyOtpScreen);
-                                //  }
                               },
                             ),
                           ],
